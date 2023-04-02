@@ -3,14 +3,24 @@
   <head>
     <title>Cookie Clicker Game</title>
     <style>
-      #cookie-container {
+      body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        background: linear-gradient(to bottom, #FF4136, #660000);
       }
       #cookie {
         cursor: pointer;
+      }
+      #score {
+        font-size: 3rem;
+        margin-top: 2rem;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        color: white;
       }
     </style>
     <script>
@@ -18,16 +28,14 @@
 
       function handleClick() {
         counter++;
-        document.getElementById("score").innerHTML = counter;
+        document.getElementById("count").innerHTML = counter;
       }
     </script>
   </head>
   <body>
-    <div id="cookie-container">
-      <img id="cookie" src="cookie.jpg" alt="Cookie Image" onclick="handleClick()" />
-    </div>
-    <div>
-      Score: <span id="score">0</span>
+    <img id="cookie" src="cookie.jpg" alt="Cookie Image" onclick="handleClick()" />
+    <div id="score">
+      Score: <span id="count">0</span>
     </div>
   </body>
 </html>
