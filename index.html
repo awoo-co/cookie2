@@ -26,6 +26,10 @@
         color: white;
         user-select: none;
       }
+
+    
+
+
       @keyframes bounce {
         0% {
           transform: scale(1);
@@ -75,6 +79,9 @@
       function autosave() {
         localStorage.setItem("score", counter);
       }
+
+
+
 
       setInterval(autosave, 1000);
     </script>
@@ -181,3 +188,47 @@ musicToggle.addEventListener('change', function() {
 
 
 <audio id="music" src="music.mp3" autoplay loop></audio>
+
+
+<button id="show-cookie-monster">Show Cookie Monster</button>
+<div id="cookie-monster-container">
+  <img src="monster.png" alt="Cookie Monster">
+</div>
+
+
+
+<script>
+const showCookieMonsterButton = document.getElementById("show-cookie-monster");
+const cookieMonsterContainer = document.getElementById("cookie-monster-container");
+
+showCookieMonsterButton.addEventListener("click", () => {
+  cookieMonsterContainer.style.display = "block";
+  setTimeout(() => {
+    cookieMonsterContainer.style.display = "none";
+  }, 5000);
+});
+
+
+
+  
+</script>
+
+
+
+
+
+<style>
+#cookie-monster-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+</style>
