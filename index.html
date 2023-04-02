@@ -2,6 +2,17 @@
 <html>
   <head>
     <title>Cookie Clicker Game</title>
+    <style>
+      #cookie-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #cookie {
+        cursor: pointer;
+      }
+    </style>
     <script>
       let counter = 0;
 
@@ -12,7 +23,7 @@
     </script>
   </head>
   <body>
-    <div>
+    <div id="cookie-container">
       <img id="cookie" src="cookie.jpg" alt="Cookie Image" onclick="handleClick()" />
     </div>
     <div>
