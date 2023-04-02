@@ -13,6 +13,8 @@
       }
       #cookie {
         cursor: pointer;
+        user-select: none;
+        animation: bounce 1s;
       }
       #score {
         font-size: 3rem;
@@ -21,21 +23,67 @@
         font-family: Arial, sans-serif;
         font-weight: bold;
         color: white;
+        user-select: none;
+      }
+      @keyframes bounce {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      #restartButton {
+        margin-top: 2rem;
+        background-color: #ffffff;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      #restartButton:hover {
+        background-color: #f2f2f2;
       }
     </style>
     <script>
-      let counter = 0;
+      let counter;
 
       function handleClick() {
         counter++;
         document.getElementById("count").innerHTML = counter;
+        localStorage.setItem("score", counter);
+      }
+
+      function handleRestartClick() {
+        counter = 0;
+        document.getElementById("count").innerHTML = counter;
+        localStorage.setItem("score", counter);
+      }
+
+      function init() {
+        counter = parseInt(localStorage.getItem("score")) || 0;
+        document.getElementById("count").innerHTML = counter;
       }
     </script>
   </head>
-  <body>
-    <img id="cookie" src="cookie.jpg" alt="Cookie Image" onclick="handleClick()" />
+  <body onload="init()">
+    <img
+      id="cookie"
+      src="cookie.jpg"
+      alt="Cookie Image"
+      onclick="handleClick()"
+    />
     <div id="score">
       Score: <span id="count">0</span>
     </div>
+    <button id="restartButton" onclick="handleRestartClick()">
+      Restart
+    </button>
   </body>
 </html>
