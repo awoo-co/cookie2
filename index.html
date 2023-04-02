@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cookie Clicker Game</title>
+    <script>
+      let counter = 0;
+
+      function handleClick() {
+        counter++;
+        document.getElementById("score").innerHTML = counter;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <img src="cookie.jpg" alt="Cookie Image" />
+    </div>
+    <button onclick="handleClick()">Click me!</button>
+    <div>
+      Score: <span id="score">0</span>
+    </div>
+  </body>
+</html>
