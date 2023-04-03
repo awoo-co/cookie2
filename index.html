@@ -209,41 +209,48 @@ musicToggle.addEventListener('change', function() {
 <audio id="music" src="music.mp3" autoplay loop></audio>
 
 
-<div id="cookie-monster-container">
+
   <img src="monster.png" alt="Cookie Monster" id="cookie-monster">
-</div>
 
 
 
 
 
 <style>
-#cookie-monster-container {
+
+.monster-image {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
-}
-
-#cookie-monster {
-  width: 200px;
-  height: 200px;
-  cursor: pointer;
 }
 
 </style>
 
 
-<button id="musicRestartButton">Restart Music</button>
+<button id="restartMusicButton" onclick="handleRestartMusicClick()">
+  Restart Music
+</button>
 
 
 <script>
-const musicRestartButton = document.getElementById('musicRestartButton');
-const music = document.getElementById('music');
-
-musicRestartButton.addEventListener('click', function() {
+function handleRestartMusicClick() {
+  const music = document.getElementById('music');
   music.currentTime = 0;
   music.play();
-});
+}
+
 </script>
+
+
+<style>
+#music-reset-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+
+</style>
