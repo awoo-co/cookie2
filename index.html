@@ -233,3 +233,17 @@ musicToggle.addEventListener('change', function() {
 }
 
 </style>
+
+
+<button id="musicRestartButton">Restart Music</button>
+
+
+<script>
+const musicRestartButton = document.getElementById('musicRestartButton');
+const music = document.getElementById('music');
+
+musicRestartButton.addEventListener('click', function() {
+  music.currentTime = 0;
+  music.play();
+});
+</script>
