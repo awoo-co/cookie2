@@ -3,7 +3,7 @@
   <head>
     <title>Cookie Clicker Game</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-    <style>
+   <style>
       body {
         display: flex;
         flex-direction: column;
@@ -84,9 +84,12 @@
 
 
 
+
       setInterval(autosave, 1000);
     </script>
-  </head>
+  
+
+</head>
   <body onload="init()">
     <img
       id="cookie"
@@ -107,6 +110,21 @@
   <input type="checkbox">
   <span class="slider round"></span>
 </label>
+
+<script>
+  const cookieMonsterImg = document.getElementById('cookie');
+  
+  cookieMonsterImg.addEventListener('click', function() {
+    // create an audio element and set its source to the sound file
+    const audio = new Audio('Bite.mp3');
+    
+    // play the sound
+    audio.play();
+  });
+  </script>
+
+
+
 
 <style>
 .switch {
@@ -191,52 +209,27 @@ musicToggle.addEventListener('change', function() {
 <audio id="music" src="music.mp3" autoplay loop></audio>
 
 
-
-
-<button id="show-cookie-monster">Show Cookie Monster</button>
 <div id="cookie-monster-container">
-  <img src="monster.png" alt="Cookie Monster">
+  <img src="monster.png" alt="Cookie Monster" id="cookie-monster">
 </div>
 
-
-<script>
-const showCookieMonsterButton = document.getElementById("show-cookie-monster");
-const cookieMonsterContainer = document.getElementById("cookie-monster-container");
-
-showCookieMonsterButton.addEventListener("click", () => {
-  cookieMonsterContainer.style.display = "block";
-  setTimeout(() => {
-    cookieMonsterContainer.style.display = "none";
-  }, 5000);
-});
-
-</script>
 
 
 
 
 <style>
 #cookie-monster-container {
-  display: none;
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
-button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+#cookie-monster {
+  width: 200px;
+  height: 200px;
   cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #888888;
 }
 
 </style>
