@@ -3,110 +3,8 @@
   <head>
     <title>Cookie Clicker Game</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-   <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: linear-gradient(to bottom, #FF4136, #660000);
-      }
-      #cookie {
-        cursor: pointer;
-        user-select: none;
-        animation: bounce 1s;
-      }
-      #score {
-        font-size: 3rem;
-        margin-top: 2rem;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        color: white;
-        user-select: none;
-      }
-
-    #restartMusicButton {
-  margin-top: 2rem;
-  background-color: #ffffff;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  color: black;
-}
-
-#restartMusicButton:hover {
-  background-color: #ff0000;
-  color: rgb(0, 0, 0);
-}
-
-
-
-      @keyframes bounce {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-      #restartButton {
-        margin-top: 2rem;
-        background-color: #ffffff;
-        border: none;
-        padding: 1rem 2rem;
-        border-radius: 0.5rem;
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        color: black;
-      }
-      #restartButton:hover {
-        background-color: #f2f2f2;
-      }
-    </style>
-    <script>
-      let counter;
-
-      function handleClick() {
-        counter++;
-        document.getElementById("count").innerHTML = counter;
-        localStorage.setItem("score", counter);
-      }
-
-      function handleRestartClick() {
-        counter = 0;
-        document.getElementById("count").innerHTML = counter;
-        localStorage.setItem("score", counter);
-      }
-
-      function init() {
-        counter = parseInt(localStorage.getItem("score")) || 0;
-        document.getElementById("count").innerHTML = counter;
-      }
-
-      function autosave() {
-        localStorage.setItem("score", counter);
-      }
-
-
-
-
-
-      setInterval(autosave, 1000);
-    </script>
-  
-
-</head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
   <body onload="init()">
     <img
       id="cookie"
@@ -115,159 +13,25 @@
       onclick="handleClick()"
     />
     <div id="score">
-    Cookie Score: <span id="count">0</span>
+      Cookie Score: <span id="count">0</span>
     </div>
     <button id="restartButton" onclick="handleRestartClick()">
       Restart
     </button>
+
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+
+    <audio id="music" src="music.mp3" loop></audio>
+
+    <img src="monster.png" alt="Cookie Monster" id="cookie-monster">
+
+    <button id="restartMusicButton" onclick="handleRestartMusicClick()">
+      Restart Music
+    </button>
+
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
-
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>
-
-<script>
-  const cookieMonsterImg = document.getElementById('cookie');
-  
-  cookieMonsterImg.addEventListener('click', function() {
-    // create an audio element and set its source to the sound file
-    const audio = new Audio('Bite.mp3');
-    
-    // play the sound
-    audio.play();
-  });
-  </script>
-
-
-
-
-<style>
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #4CAF50;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-</style>
-
-
-
-<script>
-const musicToggle = document.querySelector('.switch input[type="checkbox"]');
-
-musicToggle.addEventListener('change', function() {
-  const music = document.getElementById('music');
-  if(this.checked) {
-    music.play();
-  } else {
-    music.pause();
-  }
-});
-
-
-</script>
-
-
-<audio id="music" src="music.mp3"  loop></audio>
-
-
-
-  <img src="monster.png" alt="Cookie Monster" id="cookie-monster">
-
-
-
-
-
-<style>
-
-.monster-image {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-</style>
-
-
-<button id="restartMusicButton" onclick="handleRestartMusicClick()">
-  Restart Music
-</button>
-
-
-<script>
-function handleRestartMusicClick() {
-  const music = document.getElementById('music');
-  music.currentTime = 0;
-  music.play();
-}
-
-</script>
-
-
-<style>
-#music-reset-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-}
-
-
-</style>
