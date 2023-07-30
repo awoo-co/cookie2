@@ -1,3 +1,10 @@
+function init() {
+  document.getElementById("restartMusicButton").focus();
+}
+
+
+
+
 let counter;
 
 function handleClick() {
