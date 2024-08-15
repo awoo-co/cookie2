@@ -21,9 +21,12 @@
     </button>
 
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" id="musicToggle" onclick="toggleMusic()">
       <span class="slider round"></span>
     </label>
+
+    <!-- Volume slider -->
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="adjustVolume(this.value)">
 
     <audio id="music" src="music.mp3" loop></audio>
 

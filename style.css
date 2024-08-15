@@ -1,88 +1,44 @@
-/* Ensure body is still centered */
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Allow scrolling on very small screens */
-  margin: 0; /* Remove default margin */
-  background: linear-gradient(to bottom, #FF4136, #660000);
-  font-size: 3rem;
-  margin-top: 2rem;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  color: white;
-  user-select: none;
-}
-
-/* Make the cookie image responsive */
-#cookie {
-  cursor: pointer;
-  user-select: none;
-  animation: bounce 1s;
-  width: 50%; /* Adjust the size for smaller screens */
-  max-width: 200px; /* Limit the max size */
-  height: auto;
-}
-
-/* Make the score responsive */
-#score {
-  font-size: 3rem;
-  margin-top: 2rem;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  color: white;
-  user-select: none;
-}
-
-/* Adjust buttons for smaller screens */
-button,
-button{
-  margin-top: 1rem;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-}
-
-/* Adjust the switch size */
+/* Style for the music toggle switch */
 .switch {
-  width: 50px;
-  height: 30px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  z-index: 10;
 }
 
-.slider:before {
-  height: 22px;
-  width: 22px;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
 }
 
-@media (min-width: 600px) {
-  #cookie {
-    width: 30%;
-  }
-
-  #score {
-    font-size: 2rem;
-  }
-
-  #restartButton,
-  #restartMusicButton {
-    font-size: 1.25rem;
-  }
+.slider.round {
+  border-radius: 34px;
 }
 
-@media (min-width: 900px) {
-  #cookie {
-    width: 20%;
-  }
+.slider.round:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
 
-  #score {
-    font-size: 2.5rem;
-  }
-
-  #restartButton,
-  #restartMusicButton {
-    font-size: 1.5rem;
-  }
+/* Style for the volume slider */
+#volumeSlider {
+  margin-top: 1rem;
+  width: 150px;
+  z-index: 10;
+  cursor: pointer;
 }
