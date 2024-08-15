@@ -1,3 +1,5 @@
+let count = 0; // Initialize the cookie count
+
 function init() {
   const music = document.getElementById('music');
   const musicToggle = document.getElementById('musicToggle');
@@ -18,6 +20,22 @@ function init() {
   volumeSlider.addEventListener('input', function() {
     adjustVolume(this.value);
   });
+}
+
+function handleClick() {
+  // Increment the cookie count
+  count++;
+  
+  // Update the score display
+  document.getElementById('count').textContent = count;
+}
+
+function handleRestartClick() {
+  // Reset the cookie count
+  count = 0;
+  
+  // Update the score display
+  document.getElementById('count').textContent = count;
 }
 
 function toggleMusic() {

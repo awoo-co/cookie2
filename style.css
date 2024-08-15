@@ -1,3 +1,52 @@
+/* Ensure body is centered */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Allow scrolling on very small screens */
+  margin: 0; /* Remove default margin */
+  background: linear-gradient(to bottom, #FF4136, #660000);
+  font-family: Arial, sans-serif;
+  color: white;
+  user-select: none;
+}
+
+/* Make the cookie image responsive */
+#cookie {
+  cursor: pointer;
+  user-select: none;
+  animation: bounce 1s;
+  width: 50%; /* Adjust the size for smaller screens */
+  max-width: 200px; /* Limit the max size */
+  height: auto;
+}
+
+/* Make the score responsive */
+#score {
+  font-size: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Adjust buttons for smaller screens */
+button {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: black;
+}
+
+button:hover {
+  background-color: #f2f2f2;
+}
+
 /* Style for the music toggle switch */
 .switch {
   position: relative;
@@ -41,4 +90,33 @@
   width: 150px;
   z-index: 10;
   cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+  #cookie {
+    width: 30%;
+  }
+
+  #score {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 900px) {
+  #cookie {
+    width: 20%;
+  }
+
+  #score {
+    font-size: 2.5rem;
+  }
+
+  button {
+    font-size: 1.5rem;
+  }
 }
