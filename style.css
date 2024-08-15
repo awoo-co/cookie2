@@ -7,6 +7,13 @@ body {
   min-height: 100vh; /* Allow scrolling on very small screens */
   margin: 0; /* Remove default margin */
   background: linear-gradient(to bottom, #FF4136, #660000);
+  font-size: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  user-select: none;
 }
 
 /* Make the cookie image responsive */
@@ -31,8 +38,8 @@ body {
 }
 
 /* Adjust buttons for smaller screens */
-#restartButton,
-#restartMusicButton {
+button,
+button{
   margin-top: 1rem;
   padding: 1rem 1.5rem;
   font-size: 1rem;
