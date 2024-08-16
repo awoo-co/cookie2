@@ -56,9 +56,3 @@ function adjustVolume(volume) {
   const music = document.getElementById('music');
   music.volume = volume;
 }
-
-function handleRestartMusicClick() {
-  const music = document.getElementById('music');
-  music.currentTime = 0;
-  music.play();
-}
