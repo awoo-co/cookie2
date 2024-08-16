@@ -28,6 +28,10 @@ function handleClick() {
   
   // Update the score display
   document.getElementById('count').textContent = count;
+
+  // Play the click sound effect
+  const clickSound = new Audio('click.mp3'); // Update with the correct path to your sound effect file
+  clickSound.play();
 }
 
 function handleRestartClick() {
