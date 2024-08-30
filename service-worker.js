@@ -7,7 +7,8 @@ const urlsToCache = [
   '/cookie.jpg',
   '/monster.png',
   '/music.mp3',
-  '/favicon.png'
+  '/favicon.png',
+  '/background.png',
 ];
 
 // Install event: Cache files
