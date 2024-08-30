@@ -20,6 +20,15 @@ function init() {
   volumeSlider.addEventListener('input', function() {
     adjustVolume(this.value);
   });
+
+  // Load the saved score from localStorage
+  const savedCount = localStorage.getItem('cookieCount');
+  if (savedCount !== null) {
+    count = parseInt(savedCount, 10);
+    document.getElementById('count').textContent = count;
+  } else {
+    count = 0; // Initialize count if no saved score
+  }
 }
 
 function handleClick() {
@@ -28,6 +37,9 @@ function handleClick() {
   
   // Update the score display
   document.getElementById('count').textContent = count;
+
+  // Save the score to localStorage
+  localStorage.setItem('cookieCount', count);
 
   // Play the click sound effect
   const clickSound = new Audio('click.mp3'); // Update with the correct path to your sound effect file
@@ -40,6 +52,9 @@ function handleRestartClick() {
   
   // Update the score display
   document.getElementById('count').textContent = count;
+
+  // Save the reset score to localStorage
+  localStorage.setItem('cookieCount', count);
 }
 
 function toggleMusic() {
