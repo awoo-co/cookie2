@@ -1,7 +1,7 @@
 /* Ensure body is centered */
 /* Apply a background image to the body */
 body {
-  background: url('background.png') no-repeat center center fixed; 
+  background: url('https://teslakitty-cdn.netlify.app/cookie2/background.png') no-repeat center center fixed; 
   background-size: cover;
   display: flex;
   flex-direction: column;
