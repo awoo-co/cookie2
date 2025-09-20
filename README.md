@@ -1,2 +1,2 @@
 # cookie2
-### a cookie clicker game website
+* a cookie clicker game website

@@ -9,7 +9,7 @@ const urlsToCache = [
   '/monster.png',
   '/music.mp3',
   '/favicon.png',
-  'https://teslakitty-cdn.netlify.app/cookie2/background.png', // Use the CDN URL for the background image
+  'https://awoo-co.github.io/cdn/favicon.ico', // Use the CDN URL for the background image
 ];
 
 // Install event: Cache files

@@ -42,7 +42,7 @@ function handleClick() {
   localStorage.setItem('cookieCount', count);
 
   // Play the click sound effect
-  const clickSound = new Audio('click.mp3'); // Update with the correct path to your sound effect file
+  const clickSound = new Audio('https://awoo-co.github.io/cdn/cookie2/click.mp3'); // Update with the correct path to your sound effect file
   clickSound.play();
 }
 
